@@ -9,6 +9,8 @@ services:
     restart: always
   api:
     image: api
+    ports:
+      - "50123:50123/udp"
     depends_on:
       - db
     environment:

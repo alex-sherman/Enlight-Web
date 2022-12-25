@@ -23,6 +23,7 @@ import "./index.scss";
 import { URLS } from "./constants";
 import { URLType } from "constants/URLS";
 import { Navbar } from "components/UI/NavBar";
+import { Home } from "components/Pages/Home";
 
 interface Props {
   match?: {
@@ -132,9 +133,7 @@ class App extends React.Component<Props, State> {
       return (
         <>
           <Navbar {...props} />
-          <div className="grow">
-            <h1 className="center">Home page!</h1>
-          </div>
+          <Home {...props} />
         </>
       );
     };

@@ -1,3 +1,3 @@
-[submodule "api/Replicate"]
-	path = api/Replicate
-	url = https://github.com/alex-sherman/Replicate
+[submodule "api/MRPC.Net"]
+	path = api/MRPC.Net
+	url = https://github.com/alex-sherman/MRPC.Net

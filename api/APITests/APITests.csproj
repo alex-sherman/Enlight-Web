@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\API\API.csproj" />
-    <ProjectReference Include="..\Replicate\Replicate\Replicate.csproj" />
+    <ProjectReference Include="..\MRPC.Net\Replicate\Replicate\Replicate.csproj" />
   </ItemGroup>
 
 </Project>

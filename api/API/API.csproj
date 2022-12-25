@@ -23,8 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Replicate\ReplicateWeb\ReplicateWeb.csproj" />
-    <ProjectReference Include="..\Replicate\Replicate\Replicate.csproj" />
+    <ProjectReference Include="..\MRPC.Net\MRPC.Net\MRPC.Net.csproj" />
+    <ProjectReference Include="..\MRPC.Net\Replicate\ReplicateWeb\ReplicateWeb.csproj" />
+    <ProjectReference Include="..\MRPC.Net\Replicate\Replicate\Replicate.csproj" />
   </ItemGroup>
 
 </Project>

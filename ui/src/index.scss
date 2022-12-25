@@ -23,129 +23,6 @@ body {
   margin: 0;
   font-family: "Lato", sans-serif;
   color: var(--text-color);
-  input,
-  select,
-  textarea {
-    font-family: "Lato", serif;
-    color: var(--text-color);
-    border-color: var(--input-border);
-    background: none;
-  }
-
-  input::placeholder {
-    color: var(--input-placeholder-text-color);
-  }
-
-  svg:not([color]) {
-    color: var(--icon-primary-color);
-    &.secondary {
-      color: var(--icon-secondary-color);
-    }
-  }
-
-  .pull-right {
-    margin-left: auto !important;
-    &:not(.col) {
-      justify-content: flex-end;
-      text-align: end;
-    }
-  }
-
-  .pull-left {
-    margin-right: auto !important;
-    &:not(.col) {
-      justify-content: flex-start;
-      text-align: start;
-    }
-  }
-
-  .row {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .col {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .grow {
-    flex-grow: 1;
-  }
-
-  .grow-even {
-    flex-grow: 1;
-    flex-basis: 0;
-  }
-
-  .flex {
-    display: flex;
-  }
-
-  .fit-content {
-    width: fit-content;
-    height: fit-content;
-  }
-
-  .wrap {
-    flex-wrap: wrap;
-  }
-
-  .center {
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-  }
-
-  .hidden {
-    visibility: hidden;
-  }
-
-  .editable {
-    cursor: pointer;
-    &:focus {
-      cursor: initial;
-    }
-  }
-
-  a {
-    font-style: italic;
-    color: var(--link-color);
-    text-decoration: underline;
-    cursor: pointer;
-    display: inline;
-  }
-
-  .section-container {
-    display: block;
-  }
-
-  .section {
-    background-color: var(--card-primary);
-    &:not(.fitted) {
-      margin: 8px;
-      padding: 5px;
-      &.lg {
-        font-size: 18px;
-        padding: 12px;
-      }
-      &.xlg {
-        font-size: 20px;
-        padding: 20px;
-      }
-    }
-    border-radius: 5px;
-    box-shadow: var(--card-shadow);
-  }
-
-  .bg-primary {
-    background-color: var(--bg-primary);
-  }
-
-  .cursor-pointer {
-    cursor: pointer;
-  }
 
   --bg-primary: #eef1f5;
   --bg-navbar: var(--card-primary);
@@ -188,6 +65,135 @@ body {
   --warning-color: #f1c40f;
   --info-color: #3498db;
   --toast-progress-color: rgba(255, 255, 255, 0.7);
+}
+
+input,
+select,
+textarea {
+  font-family: "Lato", serif;
+  color: var(--text-color);
+  border-color: var(--input-border);
+  background: none;
+}
+#page-wrapper {
+  max-width: 500px;
+  margin: auto;
+}
+
+input::placeholder {
+  color: var(--input-placeholder-text-color);
+}
+
+svg:not([color]) {
+  color: var(--icon-primary-color);
+  &.secondary {
+    color: var(--icon-secondary-color);
+  }
+}
+
+.pull-right {
+  margin-left: auto !important;
+  &:not(.col) {
+    justify-content: flex-end;
+    text-align: end;
+  }
+}
+
+.pull-left {
+  margin-right: auto !important;
+  &:not(.col) {
+    justify-content: flex-start;
+    text-align: start;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.grow-even {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.fit-content {
+  width: fit-content;
+  height: fit-content;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.editable {
+  cursor: pointer;
+  &:focus {
+    cursor: initial;
+  }
+}
+
+a {
+  font-style: italic;
+  color: var(--link-color);
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline;
+}
+
+.section-container {
+  display: block;
+}
+
+.section {
+  background-color: var(--card-primary);
+  &:not(.fitted) {
+    margin: 8px;
+    padding: 8px;
+    &.lg {
+      font-size: 18px;
+      padding: 12px;
+    }
+    &.xlg {
+      font-size: 20px;
+      padding: 20px;
+    }
+  }
+  border-radius: 5px;
+  box-shadow: var(--card-shadow);
+}
+
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 #root,

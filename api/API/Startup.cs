@@ -21,6 +21,7 @@ using System.Text.RegularExpressions;
 using Replicate.Web;
 using System.Diagnostics;
 using API.DataAccess;
+using MRPC;
 
 namespace API {
     public class Startup {
@@ -33,6 +34,8 @@ namespace API {
         public static void ConfigureReplicate() {
             ReplicationModel.Default.DictionaryAsObject = true;
             ReplicationModel.Default.LoadTypes(typeof(Startup).Assembly);
+            ReplicationModel.Default.Add(typeof(MRPCRequest));
+            ReplicationModel.Default.Add(typeof(MRPCResponse));
             ReplicationModel.Default[typeof(Guid)]
                 .SetSurrogate(Surrogate.Simple<Guid, string>(g => g.ToString(), Guid.Parse));
         }
@@ -48,6 +51,9 @@ namespace API {
                 options.UseNpgsql(Configuration.GetConnectionString("Database"));
                 options.UseSnakeCaseNamingConvention();
             });
+            var client = new MRPCClient(50123);
+            client.Listen();
+            services.AddSingleton(client);
             services.AddHttpContextAccessor();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

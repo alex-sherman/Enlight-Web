@@ -18,6 +18,12 @@ const urlKeyMap: { [type: string]: { [action: string]: URLType } } = {
     CHANGE_PASSWORD: {
       url: "users/changepassword"
     },
+  },
+  mrpc: {
+    CALL: {
+      url: "mrpc/call",
+      keepCasing: true,
+    }
   }
 };
 

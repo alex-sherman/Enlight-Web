@@ -51,7 +51,7 @@ namespace API {
                 options.UseNpgsql(Configuration.GetConnectionString("Database"));
                 options.UseSnakeCaseNamingConvention();
             });
-            var client = new MRPCClient(50123);
+            var client = new MRPCClient(Configuration.GetSection("MRPC")["BroadcastAddress"], 50123);
             client.Listen();
             services.AddSingleton(client);
             services.AddHttpContextAccessor();

@@ -12,6 +12,7 @@ services:
     depends_on:
       - db
     environment:
+      MRPC:BroadcastAddress: "192.168.1.255"
       ConnectionStrings:Database: Host=db;Username=postgres;Database=db;Password=verysecretpassword
     build: "api/"
   ui:
@@ -20,4 +21,6 @@ services:
       API_TARGET: api
     ports:
       - "80:80"
+    depends_on:
+      - api
     build: "ui/"

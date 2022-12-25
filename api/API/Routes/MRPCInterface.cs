@@ -1,4 +1,5 @@
-﻿using MRPC;
+﻿using Microsoft.Extensions.Options;
+using MRPC;
 using Replicate;
 using Replicate.Web;
 using System;
@@ -11,6 +12,7 @@ namespace API.Routes {
     [ReplicateRoute(Route = "api/mrpc")]
     public class MRPCInterface : ReplicateWebRPC {
         [FromDI] public MRPCClient client;
+
         public MRPCInterface(IServiceProvider services) : base(services) { }
 
         [ReplicateRPC]

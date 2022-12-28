@@ -17,4 +17,4 @@ LABEL git_commit=$GIT_COMMIT
 WORKDIR /app
 COPY --from=build-env /app/out .
 ENV GIT_COMMIT $GIT_COMMIT
-ENTRYPOINT ["dotnet", "API.dll"]
+ENTRYPOINT ["dotnet", "API.dll", "--urls", "http://127.0.0.1:8080"]

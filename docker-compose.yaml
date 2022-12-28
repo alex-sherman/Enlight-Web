@@ -1,26 +1,25 @@
-version: "3.9"
+version: "3"
 services:
   db:
     image: postgres
     environment:
       - POSTGRES_PASSWORD=verysecretpassword
     restart: always
+    network_mode: host
   api:
     image: api
-    ports:
-      - "50123:50123/udp"
     depends_on:
       - db
     environment:
-      MRPC:BroadcastAddress: "192.168.255.255"
-      ConnectionStrings:Database: Host=db;Username=postgres;Database=db;Password=verysecretpassword
+      MRPC:BroadcastAddress: "192.168.1.255"
+      ConnectionStrings:Database: Host=localhost;Username=postgres;Database=db;Password=verysecretpassword
     build: "api/"
+    network_mode: host
   ui:
     image: ui
     environment:
       API_TARGET: api
-    ports:
-      - "80:80"
     depends_on:
       - api
     build: "ui/"
+    network_mode: host

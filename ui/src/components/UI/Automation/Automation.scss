@@ -1,32 +1,38 @@
 .card {
   margin: 8px 8px 8px 8px;
-  border-radius: 5px;
+  border-radius: 3px;
   box-shadow: var(--card-shadow);
   padding: 5px;
-  align-items: flex-start;
   background-color: var(--card-primary);
   transition: background-color 0.35s ease;
-
-  &:before {
-    transition: box-shadow 0.35s ease;
-    border-radius: 5px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-  }
-
-  &:hover {
-    background-color: var(--card-hover);
-  }
-
-  &:hover:before {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.26);
-  }
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 /* The switch - the box around the slider */
+.item {
+  background-color: var(--card-primary);
+  &:not(.fitted) {
+    margin: 8px;
+    padding: 8px;
+  }
+  border-radius: 3px;
+  flex: 1 1 0px;
+  min-width: 100px;
+  box-shadow: var(--card-shadow);
+}
+
+.item button {
+  height: 34px;
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  display: block;
+}
+
 .switch {
   position: relative;
   width: 60px;
@@ -50,8 +56,8 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .1s;
-  transition: .1s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
 .slider:before {
@@ -62,20 +68,20 @@
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .1s;
-  transition: .1s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
-input:disabled +.slider {
+input:disabled + .slider {
   background-color: black;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {

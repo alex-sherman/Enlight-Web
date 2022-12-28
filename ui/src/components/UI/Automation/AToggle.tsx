@@ -2,7 +2,7 @@ import { AppProps } from "index";
 import React from "react";
 
 export default class AToggle extends React.Component<
-  AppProps & { path: string },
+  AppProps & { path: string; name?: string },
   { value: boolean; loaded: boolean }
 > {
   state = { value: false, loaded: false };
@@ -25,8 +25,8 @@ export default class AToggle extends React.Component<
   };
   render = () => {
     return (
-      <div className="section">
-        <div className="center">{this.props.path.split(".")[0]}</div>
+      <div className="item">
+        <div className="center">{this.props.name || this.props.path.split(".")[0]}</div>
         <div className="switch center">
           <input
             type="checkbox"

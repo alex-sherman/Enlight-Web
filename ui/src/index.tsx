@@ -154,7 +154,7 @@ class App extends React.Component<Props, State> {
       <div id="app-container" className="flex col">
         <Router>
           <Switch>
-            <Route path="/" exact render={MaybeRedirect(HomePage)} />
+            <Route path="/" exact render={(props) => <HomePage {...this.getChildProps(props)} />} />
             <Route path="/user" exact render={MaybeRedirect(UserPage)} />
             <Route path="/login" render={(props) => <Login {...this.getChildProps(props)} />} />
           </Switch>

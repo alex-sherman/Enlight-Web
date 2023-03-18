@@ -1,6 +1,9 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using MRPC;
 using Replicate;
+using Replicate.Serialization;
 using Replicate.Web;
 using System;
 using System.Collections.Generic;
@@ -12,6 +15,8 @@ namespace API.Routes {
     [ReplicateRoute(Route = "api/mrpc")]
     public class MRPCInterface : ReplicateWebRPC {
         [FromDI] public MRPCClient client;
+        [FromDI] public ILogger<MRPCInterface> logger;
+        [FromDI] public IReplicateSerializer serializer;
 
         public MRPCInterface(IServiceProvider services) : base(services) { }
 

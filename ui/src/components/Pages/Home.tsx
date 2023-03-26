@@ -27,12 +27,16 @@ export class Home extends React.Component<Props & AppProps, State> {
           <Card>
             <AButton name="TV: On" path="TV.irsend" arg={"on"} {...this.props}></AButton>
             <AButton name="TV: Input" path="TV.irsend" arg={"input"} {...this.props}></AButton>
-            <AButton name="TV: Ok" path="TV.irsend" arg={"ok"} {...this.props}></AButton>
+            <AButton path="TV.irsend" arg={"ok"} {...this.props}>TV: Ok</AButton>
           </Card>
           <Card>
             <AToggle path="Bedroom.light" {...this.props}></AToggle>
             <AToggle path="Extension.light" {...this.props}></AToggle>
             <AToggle path="Office.light" {...this.props}></AToggle>
+            <AButton path="OfficeMain.light" arg={true} {...this.props}>Office Main</AButton>
+          </Card>
+          <Card>
+            <AButton path="Garage.open" {...this.props}>Garage</AButton>
           </Card>
         </div>
       </div>
